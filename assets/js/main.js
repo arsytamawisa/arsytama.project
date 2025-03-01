@@ -218,9 +218,14 @@
       if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
         document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
         navmenulink.classList.add('active');
-      } else {
+      } else if(window.location.href.includes("contact")) {
+        document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
+        navmenulink.classList.add('active');
+      }
+      else {
         navmenulink.classList.remove('active');
       }
+
     })
   }
   window.addEventListener('load', navmenuScrollspy);
